@@ -1,11 +1,11 @@
 import React from 'react'
-import classes from './newsletter.module.css'
+import classes from './newsLetter.module.css'
 
 
-const Newsletter = () => {
+const NewsLetter = () => {
   return (
     <div>Newsletter</div>
   )
 }
 
-export default Newsletter
+export default NewsLetter
