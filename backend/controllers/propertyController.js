@@ -1,6 +1,5 @@
 const propertyController = require('express').Router();
 const Property = require('../models/property');
-const User = require('../models/user');
 const verifyToken = require('../middlewares/verifyToken');
 
 // GET ALL
