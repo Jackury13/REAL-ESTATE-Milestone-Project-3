@@ -1,7 +1,7 @@
 const yachtController = require('express').Router();
 // const Yacht = require('../models/yacht');
 // const User = require('../models/user');
-// const verifytoken = require('./middlewares/verifytoken');
+// const verifyToken = require('../middlewares/verifyToken');
 
 yachtController.get('/getAll', (req, res) => {
     

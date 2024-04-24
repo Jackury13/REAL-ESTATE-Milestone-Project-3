@@ -1,7 +1,8 @@
 const commentController = require('express').Router();
 const Comment = require('../models/comment');
-const verifytoken = require('./middlewares/verifytoken');
+const verifyToken = require('../middlewares/verifyToken');
 
+// CREATE COMMENT
 commentController.get('/:listingId', async (req, res) => {
     try {
         const comments = await Comment
@@ -14,7 +15,7 @@ commentController.get('/:listingId', async (req, res) => {
     }
 })
 
-commentController.post('/', verifytoken, async (req, res) => {
+commentController.post('/', verifyToken, async (req, res) => {
     try {
         const createdComment = await (await Comment.create({ ...req.body, author: req.user.id }))
             .populate('author', '-password')
@@ -24,7 +25,8 @@ commentController.post('/', verifytoken, async (req, res) => {
     }
 })
 
-commentController.delete('/:commentId', verifytoken, async (req, res) => {
+// DELETE COMMENT
+commentController.delete('/:commentId', verifyToken, async (req, res) => {
     try {
         const comment = await Comment.findById(req.params.commentId)
 

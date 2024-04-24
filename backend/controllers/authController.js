@@ -3,6 +3,7 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// USER REGISTRATION
 authController.post('/register', async (req, res) => {
     try {
         const isExisting = await User.findOne({ email: req.body.email })
@@ -24,6 +25,7 @@ authController.post('/register', async (req, res) => {
     }
 })
 
+// USER LOGIN
 authController.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email })
