@@ -18,7 +18,7 @@ function App() {
         <Navbar/>
         <Hero/>
         <Properties/>
-        <FeaturedProperties/>
+        <FeaturedProperties/> 
         <NewsLetter/>
         <Footer/>
       </>
