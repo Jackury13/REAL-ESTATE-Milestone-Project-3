@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './newsLetter.module.css'
+import classes from './newsletter.module.css'
 
 
 const NewsLetter = () => {

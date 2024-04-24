@@ -4,7 +4,7 @@ import Properties from './components/properties/Properties';
 import FeaturedProperties from './components/featuredProperties/FeaturedProperties';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
-import NewsLetter from './components/newsletter/NewsLetter';
+import NewsLetter from './components/newsletter/Newsletter';
 import Footer from './components/footer/Footer';
 import PropertyDetail from './components/propertyDetail/PropertyDetail';
 import Signup from './components/signup/Signup';
