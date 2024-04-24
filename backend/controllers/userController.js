@@ -1,8 +1,9 @@
 const userController = require('express').Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
-const verifytoken = require('./middlewares/verifytoken');
+const verifyToken = require('../middlewares/verifyToken');
 
+// FIND USER
 userController.get('/find/:id', async (req, res) => {
     try {
         const user = await User.findById(req.params.id).select('-password')
@@ -13,8 +14,8 @@ userController.get('/find/:id', async (req, res) => {
     }
 })
 
-userController.put('/:id', verifytoken, async (req, res) => {
-    console.log(req.body)
+// UPDATE USER
+userController.put('/:id', verifyToken, async (req, res) => {
     if (req.params.id === req.user.id.toString()) {
         try {
             if (req.body.password) {
@@ -32,7 +33,8 @@ userController.put('/:id', verifytoken, async (req, res) => {
     }
 })
 
-userController.delete('/:id', verifytoken, async (req, res) => {
+// DELETE USER
+userController.delete('/:id', verifyToken, async (req, res) => {
     const user = await User.findById(req.params.id)
     if (!user) {
         return res.status(500).json({ msg: 'User not found' })
