@@ -2,10 +2,10 @@ import React from 'react'
 import classes from './newsletter.module.css'
 
 
-const NewsLetter = () => {
+const Newsletter = () => {
   return (
     <div>Newsletter</div>
   )
 }
 
-export default NewsLetter
+export default Newsletter
