@@ -59,6 +59,7 @@
    
        PORT=5000
        MONGO_URI = mongodb+srv://<username>:<password>.@<yourclusterID>.mongodb.net/?retryWrites=true&w=majority
+       JWT_SECRET = <yourkey>
 
 6. Install backend dependencies:
 
