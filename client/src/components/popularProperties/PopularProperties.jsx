@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import img1 from '../../assets/realestatebeach.jpg'
 import img2 from '../../assets/realestatemountain.jpg'
 import img3 from '../../assets/realestatecountryside.jpg'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { request } from '../../util/fetchAPI'
 
 
@@ -13,7 +15,7 @@ const PopularProperties = () => {
   useEffect(() => {
     const fetchNumberProperties = async() => {
       try {
-        const data = await request('/property/find/types', 'GET')
+        const data = await request(`/property/find/types`, 'GET')
         setNumProperties(data)
       } catch (error) {
         console.error(error.message)

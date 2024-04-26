@@ -1,4 +1,4 @@
-export const arrPriceRange = [
+export const arrPriceRanges = [
     "0-100000",
     "100000-200000",
     "200000-300000",
@@ -7,6 +7,6 @@ export const arrPriceRange = [
 ]
 
 export const priceRangeToIndex = (priceRange) => {
-    const index = arrPriceRange.findIndex(priceRg => priceRg === priceRange)
+    const index = arrPriceRanges.findIndex(priceRg => priceRg === priceRange)
     return index
 }
