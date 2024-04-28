@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
 import Properties from './components/properties/Properties';
-import FeaturedProperties from './components/featuredProperties/FeaturedProperties';
+import PopularProperties from './components/popularProperties/PopularProperties';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 import NewsLetter from './components/newsletter/Newsletter';
@@ -17,8 +17,7 @@ function App() {
       <Route path='/'element={<>
         <Navbar/>
         <Hero/>
-        <Properties/>
-        <FeaturedProperties/>
+        <PopularProperties/>
         <NewsLetter/>
         <Footer/>
       </>
