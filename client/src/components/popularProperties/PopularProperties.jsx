@@ -33,17 +33,17 @@ const PopularProperties = () => {
           <h2>Best type of properties for you </h2>
         </div>
         <div className={classes.properties}>
-          <Link to={'/properties?type=beach&continent=0&priceRange=2'}>
+          <Link to={'/properties?type=beach&continent=0&priceRange=2'} className={classes.property}>
             <img src={img1} />
             <div className={classes.quantity}>{numProperties?.beach}34 properties</div>
             <h5>Beach properties</h5>
           </Link>
-          <Link to={'/properties?type=mountain&continent=0&priceRange=2'}>
+          <Link to={'/properties?type=mountain&continent=0&priceRange=2'} className={classes.property}>
             <img src={img2} />
             <div className={classes.quantity}>{numProperties?.mountain}34 properties</div>
             <h5>Mountain properties</h5>
           </Link>
-          <Link to={'/properties?type=countryside&continent=0&priceRange=2'}>
+          <Link to={'/properties?type=countryside&continent=0&priceRange=2'} className={classes.property}>
             <img src={img3} />
             <div className={classes.quantity}>{numProperties?.countryside}34 properties</div>
             <h5>Countryside properties</h5>
