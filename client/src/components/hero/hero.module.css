@@ -1,7 +1,7 @@
 .container{
     height: calc(100vh - 60px);
     width: 100%;
-    background-image: url('../../assets/estate.jpg');
+    background-image: url('../../assets/estate1.jpg');
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
