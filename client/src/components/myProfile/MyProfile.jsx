@@ -35,7 +35,7 @@ const MyProfile = () => {
       }
     }
     fetchListedProperties()
-  }, [])
+  }, [token])
 
   useEffect(() => {
     const fetchListedYachts = async () => {
@@ -50,7 +50,7 @@ const MyProfile = () => {
       }
     }
     fetchListedYachts()
-  }, [])
+  }, [token])
 
   useEffect(() => {
     const fetchBookmarkedProperties = async () => {
@@ -65,7 +65,7 @@ const MyProfile = () => {
       }
     }
     fetchBookmarkedProperties()
-  }, [])
+  }, [token])
 
   useEffect(() => {
     const fetchBookmarkedYachts = async () => {
@@ -80,7 +80,7 @@ const MyProfile = () => {
       }
     }
     fetchBookmarkedYachts()
-  }, [])
+  }, [token])
 
   const handleDeleteProfile = async () => {
     try {

@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './yachtcard.module.css'
+import classes from './yachtCard.module.css'
 import { Link } from 'react-router-dom'
 import { BsFillPersonFill } from 'react-icons/bs'
 
