@@ -1,4 +1,4 @@
-.container{
+.container {
     position: absolute;
     top: o;
     left: 0;
@@ -6,13 +6,14 @@
     width: 100vw;
     display: flex;
     background-image: url('../../assets/estate3.jpg');
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
     background-size: cover;
     background-blend-mode: darken;
     justify-content: center;
     align-items: center;
 }
-.wrapper{
+
+.wrapper {
     height: auto;
     width: 33vw;
     border-radius: 15px;
@@ -21,12 +22,12 @@
     background-color: whitesmoke;
 }
 
-.wrapper > h2 {
+.wrapper>h2 {
     text-align: center;
     margin-top: 10px;
     color: #333;
     font-size: 35px;
-    
+
 }
 
 form {
@@ -36,7 +37,7 @@ form {
     align-items: center;
 }
 
-form > input {
+form>input {
     width: 80%;
     height: 40px;
     margin: 10px;
@@ -45,7 +46,7 @@ form > input {
     padding: 5px;
 }
 
-form > label {
+form>label {
     color: black;
     font-size: 1.2em;
     margin: 10px;
@@ -53,35 +54,28 @@ form > label {
     text-align: left;
 }
 
-form > label:hover {
-    color:blue;
+form>label:hover {
+    color: blue;
     font-weight: 600;
 }
 
-form > button {
+form>button {
     width: 80%;
     height: 40px;
     margin: 10px;
     border-radius: 5px;
     border: 1px solid #333;
-    background-color:blue;
+    background-color: blue;
     color: white;
     font-size: 1.2em;
 }
 
-form > button:hover {
+form>button:hover {
     background-color: rgb(8, 201, 37);
     color: black;
 }
 
-form >p {
-    color: #333;
-    font-size: 1.2em;
-    margin: 10px;
-    width: 80%;
-    text-align: center;
-}
-form > p >a {
+form>p {
     color: #333;
     font-size: 1.2em;
     margin: 10px;
@@ -89,7 +83,15 @@ form > p >a {
     text-align: center;
 }
 
-.error{
+form>p>a {
+    color: #333;
+    font-size: 1.2em;
+    margin: 10px;
+    width: 80%;
+    text-align: center;
+}
+
+.error {
     color: red;
     font-size: 1.2em;
     margin: 10px;
@@ -99,16 +101,15 @@ form > p >a {
 
 /* responsive design */
 @media (max-width: 768px) {
-    .wrapper{
+    .wrapper {
         height: 50vh;
         width: 80vw;
     }
 }
 
 @media (max-width: 480px) {
-    .wrapper{
+    .wrapper {
         height: 50vh;
         width: 90vw;
     }
 }
-

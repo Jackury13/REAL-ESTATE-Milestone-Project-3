@@ -7,7 +7,6 @@ import classes from './signup.module.css'
 import { register } from '../../redux/authSlice'
 import { request } from '../../util/fetchAPI'
 
-
 const Signup = () => {
   const [state, setState] = useState({})
   const [photo, setPhoto] = useState("")
