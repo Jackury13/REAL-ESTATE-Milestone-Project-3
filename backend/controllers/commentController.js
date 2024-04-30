@@ -1,5 +1,5 @@
 const commentController = require('express').Router();
-const Comment = require('../models/comment');
+const Comment = require('../models/Comment');
 const verifyToken = require('../middlewares/verifyToken');
 
 // CREATE COMMENT

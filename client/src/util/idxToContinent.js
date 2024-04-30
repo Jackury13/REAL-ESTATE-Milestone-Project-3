@@ -1,9 +1,9 @@
 export const arrContinent = [
-    "Africa",
-    "Asia",
     "Europe",
-    "North America",
+    "Asia",
+    "Africa",
     "South America",
+    "North America",
     "Oceania"
 ]
 

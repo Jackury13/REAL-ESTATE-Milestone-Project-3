@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
 import classes from './navbar.module.css'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
@@ -173,7 +174,7 @@ const Navbar = () => {
                 <option value='Africa'>Africa</option>
               </select>
               <input value={state?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
-              <input value={state?.sqmeters} type="number" placeholder='Sq. meters' name="sqmeters" onChange={handleState} />
+              <input value={state?.sqft} type="number" placeholder='Sq. feet' name="sqft" onChange={handleState} />
               <input value={state?.beds} type="number" placeholder='Beds' name="beds" step={1} min={1} onChange={handleState} />
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '50%' }}>
                 <label htmlFor='photo'>Property picture <AiOutlineFileImage /></label>
@@ -238,7 +239,7 @@ const Navbar = () => {
                       <input value={state?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
                       <input value={state?.continent} type="text" placeholder='Continent' name="continent" onChange={handleState} />
                       <input value={state?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
-                      <input value={state?.sqmeters} type="number" placeholder='Sq. meters' name="sqmeters" onChange={handleState} />
+                      <input value={state?.sqft} type="number" placeholder='Sq. feet' name="sqft" onChange={handleState} />
                       <input value={state?.beds} type="number" placeholder='Beds' name="beds" step={1} min={1} onChange={handleState} />
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '50%' }}>
                         <label htmlFor='photo'>Property picture <AiOutlineFileImage /></label>

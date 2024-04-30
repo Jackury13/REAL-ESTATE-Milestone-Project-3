@@ -101,7 +101,7 @@ function App() {
         <Route path='/update-profile' element={user ?
           <>
             <Navbar />
-            <Yachts />
+            <UpdateProfile />
             <Footer />
           </>
           : <Navigate to='/signin' />} />

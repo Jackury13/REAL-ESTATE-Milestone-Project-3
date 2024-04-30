@@ -1,4 +1,4 @@
-import img1 from '../assets/estate.jpg'
+import img1 from '../assets/estate1.jpg'
 import img2 from '../assets/estate2.jpg'
 import img3 from '../assets/estate3.jpg'
 import img4 from '../assets/estate4.jpg'
@@ -7,7 +7,7 @@ export const properties = [
     {
         img: img1,
         _id: crypto.randomUUID(),
-        type: 'BEACH',
+        type: 'beach',
         price: 150000,
         sqft: 2000,
         desc: 'Best property in Australia',
@@ -18,7 +18,7 @@ export const properties = [
     {
         img: img2,
         _id: crypto.randomUUID(),
-        type: 'MOUNTAIN',
+        type: 'mountain',
         price: 250000,
         sqft: 2500,
         desc: 'Best property in Brazil',
@@ -29,7 +29,7 @@ export const properties = [
     {
         img: img3,
         _id: crypto.randomUUID(),
-        type: 'VILLAGE',
+        type: 'village',
         price: 500000,
         sqft: 6000,
         desc: 'Best property in Serbia',
@@ -40,7 +40,7 @@ export const properties = [
     {
         img: img4,
         _id: crypto.randomUUID(),
-        type: 'MOUNTAIN',
+        type: 'mountain',
         price: 175000,
         sqft: 4000,
         desc: 'Best property in India',

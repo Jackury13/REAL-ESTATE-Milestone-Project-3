@@ -19,7 +19,7 @@ const PropertyCard = ({ property }) => {
                 </div>
                 <div className={classes.moreDetails}>
                     <span>{property.beds} <FaBed className={classes.icon} /></span>
-                    <span>{property.sqmeters} square meters<FaSquareFull className={classes.icon} /></span>
+                    <span>{property.sqft} square feet<FaSquareFull className={classes.icon} /></span>
                 </div>
                 <div className={classes.desc}>
                     {property.desc}

@@ -1,5 +1,5 @@
 const yachtController = require('express').Router();
-const Yacht = require('../models/yacht');
+const Yacht = require('../models/Yacht');
 const verifyToken = require('../middlewares/verifyToken');
 
 // GET ALL

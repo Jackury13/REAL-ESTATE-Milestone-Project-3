@@ -17,45 +17,45 @@ const Properties = () => {
   const arrQuery = query.split("&")
   const navigate = useNavigate()
 
-  const handleState = (e) => {
-    setState(prev => {
-      return { ...prev, [e.target.name]: e.target.value }
-    })
-  }
   // fetch all properties
-
   useEffect(() => {
-    const fetchAllProperties =async() => {
-    const data = await request(`/property/getAll`, 'GET')
-    setAllProperties(data)
+    const fetchAllProperties = async () => {
+      const data = await request(`/property/getAll`, 'GET')
+      setAllProperties(data)
     }
     fetchAllProperties()
   }, [])
 
   //parsing query params
   useEffect(() => {
-    if(arrQuery && allProperties?.length > 0 && state === null){
+    if (arrQuery && allProperties?.length > 0 && state === null) {
       let formattedQuery = {}
 
       arrQuery.forEach((option, idx) => {
         const key = option.split("=")[0]
         const value = option.split("=")[1]
 
-        formattedQuery ={...formattedQuery, [key]: value}
+        formattedQuery = { ...formattedQuery, [key]: value }
 
-        if(idx === arrQuery.length -1){
-          setState(formattedQuery)
+        if (idx === arrQuery.length - 1) {
+          setState(prev => formattedQuery)
           handleSearch(formattedQuery)
         }
       })
     }
   }, [allProperties, arrQuery])
 
+  const handleState = (e) => {
+    setState(prev => {
+      return { ...prev, [e.target.name]: e.target.value }
+    })
+  }
+
   const handleSearch = (param = state) => {
     let options
 
-    if(param?.nativeEvent) {
-      options = state 
+    if (param?.nativeEvent) {
+      options = state
     } else {
       options = param
     }
@@ -65,19 +65,19 @@ const Properties = () => {
       const minPrice = Number(priceRange.split('-')[0])
       const maxPrice = Number(priceRange.split('-')[1])
       const continent = continentToIdx(property.continent)
-      
-      if(
+
+      if (
         property.type === options.type
         && continent === Number(options.continent)
-        && property.price >= minPrice && property.price <= maxPrice 
-      ){
+        && property.price >= minPrice && property.price <= maxPrice
+      ) {
         return property
       }
     })
 
     const queryStr = `type=${options.type}&continent=${options.continent}&priceRange=${options.priceRange}`
 
-    navigate(` /properties?${queryStr}`, {replace: true})
+    navigate(` /properties?${queryStr}`, { replace: true })
     setFilteredProperties(filteredProperties)
   }
 
@@ -120,7 +120,7 @@ const Properties = () => {
             </div>
             <div className={classes.properties}>
               {filteredProperties.map((property) => (
-                <PropertyCard key={property._id} property={property}/>
+                <PropertyCard key={property._id} property={property} />
               ))}
             </div>
           </> : <h2 className={classes.noProperty}>We have no properties with the specified options.</h2>}

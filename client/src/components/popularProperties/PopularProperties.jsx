@@ -22,7 +22,7 @@ const PopularProperties = () => {
         setMountainProperties(data.mountain)
         setVillageProperties(data.village)
       } catch (error) {
-        console.error(error.message)
+        console.error(error)
       }
     }
     fetchPropertiesNumber()
@@ -41,12 +41,12 @@ const PopularProperties = () => {
             <div className={classes.quantity}>{beachProperties} properties</div>
             <h5>Beach properties</h5>
           </Link>
-          <Link to={'/properties?type=mountain&continent=0&priceRange=2'} className={classes.property}>
+          <Link to={'/properties?type=mountain&continent=1&priceRange=1'} className={classes.property}>
             <img src={img2} />
             <div className={classes.quantity}>{mountainProperties} properties</div>
             <h5>Mountain properties</h5>
           </Link>
-          <Link to={'/properties?type=countryside&continent=0&priceRange=2'} className={classes.property}>
+          <Link to={'/properties?type=village&continent=2&priceRange=1'} className={classes.property}>
             <img src={img3} />
             <div className={classes.quantity}>{villageProperties} properties</div>
             <h5>Village properties</h5>
