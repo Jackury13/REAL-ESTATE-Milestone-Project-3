@@ -10,7 +10,7 @@ const Newsletter = () => {
           <h2>Send us your email, we will do the rest. </h2>
         </div>
         <div className={classes.inputContainer}>
-          <input type="email" placeholder="Email" className={classes.input}/>
+          <input type="email" placeholder="Type your email" className={classes.input}/>
           <button className={classes.button}>Send</button> 
         </div>
       </div>

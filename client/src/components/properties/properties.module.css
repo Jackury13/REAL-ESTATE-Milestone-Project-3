@@ -68,7 +68,7 @@
     gap: 0.5rem;
 }
 
-.options> .searchBtn {
+.options>.searchBtn {
     outline: none;
     border: none;
     width: 40px;
@@ -76,7 +76,8 @@
     cursor: pointer;
     background-color: transparent;
 }
-.options > .searchBtn > .searchIcon{
+
+.options>.searchBtn>.searchIcon {
     border: 1px solid transparent;
     border-radius: 50%;
     padding: 0.6rem;
@@ -86,15 +87,14 @@
     fill: #fff;
 }
 
-.options> .searchBtn:active > .searchIcon{
+.options>.searchBtn:active>.searchIcon {
     border: 1px solid rgb(7, 3, 73);
     fill: rgb(7, 3, 73);
     background: #fff;
 }
 
-
 /* individual property css */
-.properties{
+.properties {
     margin-top: 3rem;
     width: 100%;
     display: flex;
@@ -102,10 +102,24 @@
     gap: 5rem;
 }
 
-.noProperty{
+.noProperty {
     text-align: center;
     margin-top: 5rem;
     font-size: 36px;
     color: #222;
 }
 
+/* RESPONSIVE */
+@media only screen and (max-width: 992px) {
+    .wrapper>.options {
+        width: 90%;
+        padding: 0.75rem 1rem;
+        margin: 0 auto;
+    }
+
+    .properties {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {}

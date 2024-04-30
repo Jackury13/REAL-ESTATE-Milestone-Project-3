@@ -8,22 +8,25 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { request } from '../../util/fetchAPI'
 
-
 const PopularProperties = () => {
-  const [numProperties, setNumProperties] = useState({})
+  const [beachProperties, setBeachProperties] = useState(0)
+  const [mountainProperties, setMountainProperties] = useState(0)
+  const [villageProperties, setVillageProperties] = useState(0)
 
   useEffect(() => {
-    const fetchNumberProperties = async() => {
+    const fetchPropertiesNumber = async () => {
       try {
         const data = await request(`/property/find/types`, 'GET')
-        setNumProperties(data)
+
+        setBeachProperties(data.beach)
+        setMountainProperties(data.mountain)
+        setVillageProperties(data.village)
       } catch (error) {
         console.error(error.message)
       }
     }
-    fetchNumberProperties()
+    fetchPropertiesNumber()
   }, [])
-
 
   return (
     <div className={classes.container}>
@@ -33,20 +36,20 @@ const PopularProperties = () => {
           <h2>Best type of properties for you </h2>
         </div>
         <div className={classes.properties}>
-          <Link to={'/properties?type=beach&continent=0&priceRange=2'} className={classes.property}>
+          <Link to={'/properties?type=beach&continent=0&priceRange=1'} className={classes.property}>
             <img src={img1} />
-            <div className={classes.quantity}>{numProperties?.beach}34 properties</div>
+            <div className={classes.quantity}>{beachProperties} properties</div>
             <h5>Beach properties</h5>
           </Link>
           <Link to={'/properties?type=mountain&continent=0&priceRange=2'} className={classes.property}>
             <img src={img2} />
-            <div className={classes.quantity}>{numProperties?.mountain}34 properties</div>
+            <div className={classes.quantity}>{mountainProperties} properties</div>
             <h5>Mountain properties</h5>
           </Link>
           <Link to={'/properties?type=countryside&continent=0&priceRange=2'} className={classes.property}>
             <img src={img3} />
-            <div className={classes.quantity}>{numProperties?.countryside}34 properties</div>
-            <h5>Countryside properties</h5>
+            <div className={classes.quantity}>{villageProperties} properties</div>
+            <h5>Village properties</h5>
           </Link>
         </div>
       </div>

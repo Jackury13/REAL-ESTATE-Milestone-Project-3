@@ -24,14 +24,14 @@
     border-radius: 50%;
 }
 
-.leftt>.userData {
+.left>.userData {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
     align-items: flex-start;
+    gap: 0.25rem;
 }
 
-.timeago {
+.timeago{
     font-size: 15px;
     color: #555;
 }
