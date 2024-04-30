@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import person from '../../assets/person.jpg'
 
 const PropertyCard = ({ property }) => {
-  const ownerProfileImg = property?.currentOwner?.profileImg
+    const ownerProfileImg = property?.currentOwner?.profileImg
 
     return (
         <div key={property._id} className={classes.property}>

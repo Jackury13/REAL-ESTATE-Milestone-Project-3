@@ -3,7 +3,6 @@ import classes from './navbar.module.css'
 import { Link } from 'react-router-dom'
 import {BsHouseDoor} from 'react-icons/bs'
 
-
 const Navbar = () => {
   return (
     <div className={classes.container}>
