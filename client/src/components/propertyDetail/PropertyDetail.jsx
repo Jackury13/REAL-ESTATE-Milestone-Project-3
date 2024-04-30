@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import classes from './propertyDetail.module.css'
 import person from '../../assets/person.jpg'
 import emailjs from '@emailjs/browser'
