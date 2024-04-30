@@ -14,7 +14,7 @@ const YachtEdit = () => {
   const [price, setPrice] = useState(null)
   const [maxPassengers, setMaxPassengers] = useState(null)
   const [location, setLocation] = useState(null)
-  const [metersLong, setMetersLong] = useState(null)
+  const [feetLong, setFeetLong] = useState(null)
   const [initialPhoto, setInitialPhoto] = useState(null)
   const [photo, setPhoto] = useState(null)
   const [error, setError] = useState(false)
@@ -32,7 +32,7 @@ const YachtEdit = () => {
         setMaxPassengers(yacht.maxPassengers)
         setLocation(yacht.location)
         setTitle(yacht.title)
-        setMetersLong(yacht.metersLong)
+        setFeetLong(yacht.feetLong)
         setInitialPhoto(yacht.img)
       } catch (error) {
         console.log(error)
@@ -59,7 +59,7 @@ const YachtEdit = () => {
         await request("/upload/image", 'POST', options, formData, true)
       }
 
-      if (title === '' || desc === '' || price === '' || maxPassengers === '' || location === '' || metersLong === '') {
+      if (title === '' || desc === '' || price === '' || maxPassengers === '' || location === '' || feetLong === '') {
         setEmptyFields(true)
         setTimeout(() => {
           setEmptyFields(false)
@@ -78,7 +78,7 @@ const YachtEdit = () => {
         price,
         maxPassengers,
         location,
-        metersLong
+        feetLong
       }
 
       if (filename) {
@@ -127,8 +127,8 @@ const YachtEdit = () => {
             <input value={location} type="text" name="location" onChange={(e) => setLocation(e.target.value)} />
           </div>
           <div className={classes.inputBox}>
-            <label>Meters long</label>
-            <input value={metersLong} type="text" name="metersLong" onChange={(e) => setMetersLong(e.target.value)} />
+            <label>Feet long</label>
+            <input value={feetLong} type="text" name="feetLong" onChange={(e) => setFeetLong(e.target.value)} />
           </div>
           <div className={classes.inputBoxImage}>
             <label htmlFor='image'>Photo    <AiFillFileImage /></label>

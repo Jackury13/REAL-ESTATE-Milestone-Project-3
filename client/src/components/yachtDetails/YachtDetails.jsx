@@ -138,7 +138,7 @@ const YachtDetails = () => {
           <div className={classes.price}>Price: <span>$ {yacht?.price}</span></div>
           <div className={classes.passengers}>Max passengers allowed: <span>{yacht?.maxPassengers}</span></div>
           <div className={classes.descContainer}>Description: <p>{yacht?.desc}</p></div>
-          <div className={classes.metersLong}>Meters long: <span>{yacht?.metersLong}</span></div>
+          <div className={classes.feetLong}>Feet long: <span>{yacht?.feetLong}</span></div>
           <div className={classes.ownerDetails}>
             <span>Owner name: {yacht?.currentOwner?.username}</span>
             {yacht?.currentOwner?._id.toString() !== user._id && (

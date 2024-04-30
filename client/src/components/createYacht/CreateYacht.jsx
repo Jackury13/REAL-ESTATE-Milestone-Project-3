@@ -12,7 +12,7 @@ const CreateYacht = () => {
     const [price, setPrice] = useState(null)
     const [maxPassengers, setMaxPassengers] = useState(null)
     const [location, setLocation] = useState(null)
-    const [metersLong, setMetersLong] = useState(null)
+    const [feetLong, setFeetLong] = useState(null)
     const [photo, setPhoto] = useState(null)
     const [error, setError] = useState(false)
     const [emptyFields, setEmptyFields] = useState(false)
@@ -44,7 +44,7 @@ const CreateYacht = () => {
                 return
             }
 
-            if (title === '' || desc === '' || price === '' || maxPassengers === '' || location === '' || metersLong === '') {
+            if (title === '' || desc === '' || price === '' || maxPassengers === '' || location === '' || feetLong === '') {
                 setEmptyFields(true)
                 setTimeout(() => {
                     setEmptyFields(false)
@@ -63,7 +63,7 @@ const CreateYacht = () => {
                 price,
                 maxPassengers,
                 location,
-                metersLong
+                feetLong
             }
 
             const newYacht = await request("/yacht", 'POST', options, { ...body, img: filename })
@@ -104,8 +104,8 @@ const CreateYacht = () => {
                         <input value={location} type="text" name="location" onChange={(e) => setLocation(e.target.value)} />
                     </div>
                     <div className={classes.inputBox}>
-                        <label>Meters long</label>
-                        <input value={metersLong} type="text" name="metersLong" onChange={(e) => setMetersLong(e.target.value)} />
+                        <label>Feet long</label>
+                        <input value={feetLong} type="text" name="feetLong" onChange={(e) => setFeetLong(e.target.value)} />
                     </div>
                     <div className={classes.inputBoxImage}>
                         <label htmlFor='image'>Photo    <AiFillFileImage /></label>
