@@ -13,7 +13,7 @@ const PropertySchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ['BEACH', 'MOUNTAIN', 'VILLAGE'],
+        enum: ['beach', 'mountain', 'village'],
         required: true
     },
     desc: {

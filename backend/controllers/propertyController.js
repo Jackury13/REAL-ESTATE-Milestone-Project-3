@@ -1,5 +1,5 @@
 const propertyController = require('express').Router();
-const Property = require('../models/property');
+const Property = require('../models/Property');
 const verifyToken = require('../middlewares/verifyToken');
 
 // GET ALL
@@ -41,9 +41,9 @@ propertyController.get('/find', async (req, res) => {
 // TODO FETCH TYPE OF PROPERTIES. example: {BEACH: 34, MOUNTAIN: 23}
 propertyController.get('/find/types', async (req, res) => {
     try {
-        const beachType = await Property.countDocuments({ type: 'BEACH' })
-        const mountainType = await Property.countDocuments({ type: 'MOUNTAIN' })
-        const villageType = await Property.countDocuments({ type: 'VILLAGE' })
+        const beachType = await Property.countDocuments({ type: 'beach' })
+        const mountainType = await Property.countDocuments({ type: 'mountain' })
+        const villageType = await Property.countDocuments({ type: 'village' })
 
         return res.status(200).json({ beach: beachType, mountain: mountainType, village: villageType })
     } catch (error) {
