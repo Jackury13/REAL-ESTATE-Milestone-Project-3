@@ -166,12 +166,12 @@ const Navbar = () => {
               <input value={state?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
               <select value={state?.continent} required name='continent' onChange={handleState}>
                 <option disabled>Select Continent</option>
-                <option value='Europe'>Europe</option>
-                <option value='Asia'>Asia</option>
-                <option value='South America'>South America</option>
                 <option value='North America'>North America</option>
-                <option value='Oceania'>Oceania</option>
+                <option value='South America'>South America</option>
+                <option value='Europe'>Europe</option>
+                <option value='Asia'>Asia</option>                
                 <option value='Africa'>Africa</option>
+                <option value='Oceania'>Oceania</option>
               </select>
               <input value={state?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
               <input value={state?.sqft} type="number" placeholder='Sq. feet' name="sqft" onChange={handleState} />

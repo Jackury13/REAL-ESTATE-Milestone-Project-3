@@ -39,11 +39,11 @@ const Hero = () => {
           </select>
           <select onChange={(e) => setContinent(e.target.value)}>
             <option disabled>Select Continent</option>
-            <option value="0">Europe</option>
-            <option value="1">Asia</option>
-            <option value="2">Africa</option>
-            <option value="3">South America</option>
-            <option value="4">North America</option>
+            <option value="0">North America</option>
+            <option value="1">South America</option>
+            <option value="2">Europe</option>
+            <option value="3">Asia</option>
+            <option value="4">Africa</option>
             <option value="5">Oceania</option>
           </select>
           <AiOutlineSearch className={classes.searchIcon} onClick={handleSearch} />

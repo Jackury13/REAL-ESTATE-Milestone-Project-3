@@ -94,12 +94,12 @@ const EditProperty = () => {
           <input value={propertyDetails?.desc} type="text" placeholder="Desc" name="desc" onChange={handleState} />
           <select required name="continent" onChange={handleState}>
             <option disabled>Select Continent</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
             <option value="Europe">Europe</option>
             <option value="Asia">Asia</option>
-            <option value="South America">South America</option>
-            <option value="North America">North America</option>
-            <option value="Oceania">Oceania</option>
             <option value="Africa">Africa</option>
+            <option value="Oceania">Oceania</option>
           </select>
           <input value={propertyDetails?.price} type="number" placeholder="Price" name="price" onChange={handleState} />
           <input value={propertyDetails?.sqft} type="number" placeholder="Sq. feet" name="sqfeet" onChange={handleState} />
