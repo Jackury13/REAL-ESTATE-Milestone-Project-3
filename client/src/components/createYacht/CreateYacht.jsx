@@ -19,7 +19,6 @@ const CreateYacht = () => {
     const { token } = useSelector((state) => state.auth)
     const navigate = useNavigate()
 
-
     const handleCreate = async (e) => {
         e.preventDefault()
 
@@ -72,11 +71,10 @@ const CreateYacht = () => {
         } catch (error) {
             setError(true)
             setTimeout(() => {
-                 setError(false)
+                setError(false)
             }, 2500);
         }
     }
-
 
     return (
         <div className={classes.container}>

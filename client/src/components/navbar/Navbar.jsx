@@ -170,7 +170,7 @@ const Navbar = () => {
                 <option value='Asia'>Asia</option>
                 <option value='South America'>South America</option>
                 <option value='North America'>North America</option>
-                <option value='Australia'>Australia</option>
+                <option value='Oceania'>Oceania</option>
                 <option value='Africa'>Africa</option>
               </select>
               <input value={state?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
