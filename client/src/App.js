@@ -56,7 +56,7 @@ function App() {
             <Footer />
           </>
           : <Navigate to='/signin' />} />
-        <Route path='/yachts/:id' element={user ?
+        <Route path='/yacht/:id' element={user ?
           <>
             <Navbar />
             <YachtDetails />
@@ -70,7 +70,7 @@ function App() {
             <Footer />
           </>
           : <Navigate to='/signin' />} />
-        <Route path='/yachts-edit/:id' element={user ?
+        <Route path='/yacht-edit/:id' element={user ?
           <>
             <Navbar />
             <YachtEdit />
