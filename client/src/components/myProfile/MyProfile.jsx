@@ -58,7 +58,7 @@ const MyProfile = () => {
         const options = {
           Authorization: `Bearer ${token}`
         }
-        const data = await request('/property/find/bookedmarked-properties', 'GET', options)
+        const data = await request('/property/find/bookmarked-properties', 'GET', options)
         setBookmarkedProperties(data)
       } catch (error) {
         console.log(error)

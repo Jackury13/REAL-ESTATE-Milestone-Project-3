@@ -1,6 +1,7 @@
-const yachtController = require('express').Router();
-const Yacht = require('../models/Yacht');
-const verifyToken = require('../middlewares/verifyToken');
+const yachtController = require('express').Router()
+const Yacht = require('../models/Yacht')
+const User = require('../models/User')
+const verifyToken = require('../middlewares/verifyToken')
 
 // GET ALL
 yachtController.get('/getAll', async (req, res) => {

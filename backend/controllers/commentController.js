@@ -1,6 +1,6 @@
-const commentController = require('express').Router();
-const Comment = require('../models/Comment');
-const verifyToken = require('../middlewares/verifyToken');
+const commentController = require('express').Router()
+const Comment = require('../models/Comment')
+const verifyToken = require('../middlewares/verifyToken')
 
 // CREATE COMMENT
 commentController.get('/:listingId', async (req, res) => {

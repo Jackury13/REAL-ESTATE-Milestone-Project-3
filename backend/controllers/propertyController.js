@@ -1,6 +1,6 @@
-const propertyController = require('express').Router();
-const Property = require('../models/Property');
-const verifyToken = require('../middlewares/verifyToken');
+const propertyController = require('express').Router()
+const Property = require('../models/Property')
+const verifyToken = require('../middlewares/verifyToken')
 
 // GET ALL
 propertyController.get('/getAll', async (req, res) => {

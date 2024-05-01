@@ -1,7 +1,7 @@
-const authController = require('express').Router();
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const authController = require('express').Router()
+const User = require('../models/User')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 // USER REGISTRATION
 authController.post('/register', async (req, res) => {
@@ -33,6 +33,10 @@ authController.post('/login', async (req, res) => {
             throw new Error({ msg: 'Wrong Credentials. Try again!' })
         }
         const comparePass = await bcrypt.compare(req.body.password, user.password)
+        if (!comparePass) {
+            throw new Error('Wrong credentials. Try again!')
+        }
+        const { password, ...others } = user._doc
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '8d' })
 
         return res.status(200).json({ others, token })

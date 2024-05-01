@@ -1,7 +1,7 @@
-const userController = require('express').Router();
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-const verifyToken = require('../middlewares/verifyToken');
+const userController = require('express').Router()
+const User = require('../models/User')
+const bcrypt = require('bcrypt')
+const verifyToken = require('../middlewares/verifyToken')
 
 // FIND USER
 userController.get('/find/:id', async (req, res) => {
