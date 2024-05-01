@@ -3,11 +3,11 @@ import classes from './footer.module.css'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id='footer'>
       <div className={classes.wrapper}>
         <div className={classes.col}>
           <h2> About Luxury State</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi obcaecati asperiores, dignissimos nisi nostrum accusantium ad ut totam at voluptatibus?</p>
+          <p>Luxury State is a company that promotes some of the most; unique, luxurious, and even remote real estate from around the world. From tree homes to mega mansions, our vacation home destinations are meant to be more than a home away from home. Join us on your journey to finding a piece of heaven on earth.</p>
         </div>
         <div className={classes.col}>
           <h2> Contact Us</h2>

@@ -10,6 +10,7 @@ import { BsHouseDoor } from 'react-icons/bs'
 import { logout } from '../../redux/authSlice'
 import { request } from '../../util/fetchAPI'
 import { useEffect } from 'react'
+import Footer from '../footer/Footer'
 
 const Navbar = () => {
   const [state, setState] = useState({})
@@ -114,16 +115,13 @@ const Navbar = () => {
         </Link>
         <ul className={classes.center}>
           <li onClick={scrollToTop} className={classes.listItem}>
-            Home
+            <Link to='/'>Home</Link>
           </li>
           <li className={classes.listItem}>
-            About
+            <a href='#footer'>About</a>
           </li>
           <li className={classes.listItem}>
-            Featured
-          </li>
-          <li className={classes.listItem}>
-            Contacts
+          <a href='#footer'>Contacts</a>
           </li>
         </ul>
         <div className={classes.right}>
