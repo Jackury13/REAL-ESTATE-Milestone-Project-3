@@ -1,7 +1,7 @@
 .container {
     margin-top: 2.5rem;
-    min-width: calc(100vh - 60px);
-    height: 100%;
+    min-height: calc(100vh - 60px);
+    width: 100%;
 }
 
 .wrapper {
@@ -50,7 +50,7 @@
 
 .deleteModal> :first-child {
     outline: none;
-    border: none;    
+    border: none;
     padding: 0.25rem 0.75rem;
     border-radius: 8px;
     background-color: green;
@@ -60,7 +60,7 @@
 
 .deleteModal> :last-child {
     outline: none;
-    border: none;    
+    border: none;
     padding: 0.25rem 0.75rem;
     border-radius: 8px;
     background-color: #f00;
@@ -102,7 +102,7 @@
 }
 
 .buttons {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +136,7 @@
     align-items: center;
 }
 
-.poperties {
+.properties {
     margin-top: 3rem;
     width: 100%;
     display: flex;
@@ -144,12 +144,12 @@
     gap: 2rem;
 }
 
-.property {
+.property{
     height: 100%;
     width: 350px;
 }
 
-.poperties>.property>.imgContainer {
+.properties>.property>.imgContainer {
     display: inline-block;
     height: 350px;
     width: 80%;
@@ -158,18 +158,18 @@
     cursor: pointer;
 }
 
-.poperties>.property>.imgContainer>img {
+.properties>.property>.imgContainer>img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: 150ms all;
 }
 
-.poperties>.property>.imgContainer>img:hover {
+.properties>.property>.imgContainer>img:hover {
     scale: 1.035;
 }
 
-.poperties .owner {
+.properties .owner {
     height: 35px;
     width: 35px;
     border-radius: 50%;
@@ -191,7 +191,7 @@
 }
 
 .priceAndOwner>.price {
-    font-weight: bold;    
+    font-weight: bold;
     font-size: 18px;
 }
 
@@ -256,7 +256,7 @@
     grid-gap: 3rem;
 }
 
-.noListed {
+.noListed{
     width: 100%;
     text-align: center;
     font-size: 32px;
