@@ -12,12 +12,15 @@
 
 - ## Screenshots
  
-- ![Screenshot1]();
-- ![Screenshot2]();
-- ![Screenshot3]();
-- ![Screenshot4](); 
-- ![Screenshot5]();
-- ![Screenshot6]();
+- ![Screenshot1](./client/src/assets/Homepage.png);
+- ![Screenshot2](./client/src/assets/PropertyCard.png);
+- ![Screenshot3](./client/src/assets/ListProperty.png);
+- ![Screenshot4](./client/src/assets/PropertyDetail.png); 
+- ![Screenshot5](./client/src/assets/SignIn.png);
+- ![Screenshot6](./client/src/assets/SignUp.png);
+- ![Screenshot7](./client/src/assets/ProfileBox.png);
+- ![Screenshot8](./client/src/assets/Profile.png);
+- ![Screenshot9](./client/src/assets/ListYacht.png);
 
 ## Features
 
