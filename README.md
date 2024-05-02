@@ -13,7 +13,7 @@
 - ## Screenshots
  
 - ![Screenshot1](./client/src/assets/Homepage.png);
-- ![Screenshot2](./client/src/assets/PropertyCard.png);
+- ![Screenshot2](./client/src/assets/PropertyCards.png);
 - ![Screenshot3](./client/src/assets/ListProperty.png);
 - ![Screenshot4](./client/src/assets/PropertyDetail.png); 
 - ![Screenshot5](./client/src/assets/SignIn.png);
