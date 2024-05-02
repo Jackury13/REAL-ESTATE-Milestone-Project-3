@@ -13,14 +13,21 @@
 - ## Screenshots
  
 - ![Screenshot1](./client/src/assets/Homepage.png);
-- ![Screenshot2](./client/src/assets/PropertyCards.png);
-- ![Screenshot3](./client/src/assets/ListProperty.png);
-- ![Screenshot4](./client/src/assets/PropertyDetail.png); 
-- ![Screenshot5](./client/src/assets/SignIn.png);
-- ![Screenshot6](./client/src/assets/SignUp.png);
-- ![Screenshot7](./client/src/assets/ProfileBox.png);
-- ![Screenshot8](./client/src/assets/Profile.png);
+- ![Screenshot2](./client/src/assets/SignUp.png);
+- ![Screenshot3](./client/src/assets/SignIn.png);
+- ![Screenshot4](./client/src/assets/Homepage2.png);
+- ![Screenshot5](./client/src/assets/ListProperty.png); 
+- ![Screenshot6](./client/src/assets/PropertyDetail.png);
+- ![Screenshot7](./client/src/assets/PropertyCards.png);
+- ![Screenshot8](./client/src/assets/listedProperty.png);
 - ![Screenshot9](./client/src/assets/ListYacht.png);
+- ![Screenshot10](./client/src/assets/yachtDetails.png);
+- ![Screenshot11](./client/src/assets/comment.png);
+- ![Screenshot12](./client/src/assets/contact.png);
+- ![Screenshot13](./client/src/assets/bookmarkedProperties.png);
+- ![Screenshot14](./client/src/assets/bookmarkedYachts.png);
+- ![Screenshot15](./client/src/assets/updateProfile.png);
+
 
 ## Features
 
@@ -29,6 +36,9 @@
 3. **Property Search**: Filter and search by favourite criteria.
 4. **Bookmark Properties**: Like your favorite Properties.
 5. **Responsive Design**: Works seamlessly on both desktop and mobile devices.
+6. ****: 
+7. ****: 
+8. ****: 
 
 ## Prerequisites
 
@@ -68,21 +78,21 @@
 
        npm install
        
-       npm run start
+       npx nodemon
 
 7. Return to the project root:
 
        cd ..
 
-8. Navigate to frontend folder:
+8. Navigate to client folder:
 
-       cd cient
+       cd client
 
-9. Install backend dependencies:    
+9. Install frontend dependencies:    
 
        npm install
 
-       npx nodemon
+       npm start
 
 
        
@@ -113,6 +123,6 @@ The project follows a standard MERN stack folder structure:
 
  ## Live Demo 
 
- Check out the live demo of the Real Estate Full Stack App [here]()
+ Check out the live demo of the Real Estate Full Stack App [here](https://callz-real-estate.netlify.app/)
 
 
