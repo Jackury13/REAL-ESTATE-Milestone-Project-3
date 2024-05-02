@@ -34,11 +34,13 @@
 1. **User Authentication**: Secure user authentication and registration system.
 2. **Property Management**: Create, edit, and delete your Properties.
 3. **Property Search**: Filter and search by favourite criteria.
-4. **Bookmark Properties**: Like your favorite Properties.
-5. **Responsive Design**: Works seamlessly on both desktop and mobile devices.
-6. ****: 
-7. ****: 
-8. ****: 
+4. **Bookmark Properties**: Bookmark your favorite Properties.
+5. **Yacht Management**: Create, edit, and delete your Yachts.
+6. **Yacht Search**: Filter and search by favourite criteria.
+7. **Comment on Properties/Yachts**: Make comments on properties and yachts.
+7. **Contact System**: Contact owners of properties and yachts to purchase or ask questions.
+7. **Profile Managment**: Update and Delete profile.
+8. **Responsive Design**: Works seamlessly on both desktop and mobile devices.
 
 ## Prerequisites
 
@@ -92,7 +94,7 @@
 
        npm install
 
-       npm start
+       npm run start
 
 
        
@@ -101,14 +103,12 @@
 ## Folder Structure
 The project follows a standard MERN stack folder structure:
 
-- frontend: Contains the React frontend application.
+- client: Contains the React frontend application.
 - backend: Contains the Express.js backend application.
 - models: Define the MongoDB schemas and models.
 - routes: Define the API routes.
 - controllers: Handle route logic and interact with the database.
 - db: Configuration files (e.g., database connection).
-
-## Technologies Used
 
 #### Frontend:
 
