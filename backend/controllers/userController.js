@@ -7,7 +7,7 @@ const verifyToken = require('../middlewares/verifyToken')
 userController.get('/find/:id', async (req, res) => {
     try {
         const user = await User.findById(req.params.id).select('-password')
-        if (!user) throw new Error({ msg: 'User not found' })
+        if (!user) throw new Error("No such user")
         return res.status(200).json(user)
     } catch (error) {
         return res.status(500).json(error.message)
@@ -29,7 +29,7 @@ userController.put('/:id', verifyToken, async (req, res) => {
             return res.status(500).json(error.message)
         }
     } else {
-        return res.status(403).json({ msg: 'You can only update your profile' })
+        return res.status(403).json({ msg: 'You can update only your profile' })
     }
 })
 
@@ -37,18 +37,18 @@ userController.put('/:id', verifyToken, async (req, res) => {
 userController.delete('/:id', verifyToken, async (req, res) => {
     const user = await User.findById(req.params.id)
     if (!user) {
-        return res.status(500).json({ msg: 'User not found' })
+        return res.status(500).json({ msg: 'No such user' })
     }
     if (req.user.id.toString() === user._id.toString()) {
         try {
             await User.findByIdAndDelete(req.params.id)
 
-            return res.status(200).json({ msg: 'User deleted' })
+            return res.status(200).json({ msg: 'Successfully deleted' })
         } catch (error) {
             return res.status(500).json(error.message)
         }
     } else {
-        return res.status(403).json({ msg: 'You can only delete your profile' })
+        return res.status(403).json({ msg: 'You can delete only your profile' })
     }
 })
 

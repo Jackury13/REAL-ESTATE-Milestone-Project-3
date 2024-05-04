@@ -10,7 +10,6 @@ import { BsHouseDoor } from 'react-icons/bs'
 import { logout } from '../../redux/authSlice'
 import { request } from '../../util/fetchAPI'
 import { useEffect } from 'react'
-import Footer from '../footer/Footer'
 
 const Navbar = () => {
   const [state, setState] = useState({})

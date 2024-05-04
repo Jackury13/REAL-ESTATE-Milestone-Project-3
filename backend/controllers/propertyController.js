@@ -5,7 +5,7 @@ const verifyToken = require('../middlewares/verifyToken')
 // GET ALL
 propertyController.get('/getAll', async (req, res) => {
     try {
-        const properties = await Property.find({}).populate('currentOwner', '-password')
+        const properties = await Property.find({}).populate("currentOwner", '-password')
         return res.status(200).json(properties)
     } catch (error) {
         console.error(error)
@@ -18,17 +18,17 @@ propertyController.get('/find', async (req, res) => {
     let properties = []
     try {
         if (type) {
-            properties = await Property.find(type).populate('owner', '-password')
+            properties = await Property.find(type).populate("owner", '-password')
         } else {
             properties = await Property.find({})
         }
         return res.status(200).json(properties)
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.status(500).json(error)
     }
 })
 
-// TODO FETCH TYPE OF PROPERTIES. example: {BEACH: 34, MOUNTAIN: 23}
+// TODO FETCH TYPE OF PROPERTIES. EX: {BEACH: 34, MOUNTAIN: 23}
 propertyController.get('/find/types', async (req, res) => {
     try {
         const beachType = await Property.countDocuments({ type: 'beach' })
@@ -37,7 +37,7 @@ propertyController.get('/find/types', async (req, res) => {
 
         return res.status(200).json({ beach: beachType, mountain: mountainType, village: villageType })
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.status(500).json(error)
     }
 })
 
@@ -54,7 +54,7 @@ propertyController.get('/find/my-properties', verifyToken, async (req, res) => {
 // FETCH BOOKMARKED PROPERTIES
 propertyController.get('/find/bookmarked-properties', verifyToken, async (req, res) => {
     try {
-        const properties = await Property.find({ bookmarkedUsers: { $in: req.user.id } })
+        const properties = await Property.find({ bookmarkedUsers: { $in: [req.user.id] } })
         return res.status(200).json(properties)
     } catch (error) {
         console.error(error)
@@ -66,45 +66,45 @@ propertyController.get('/find/:id', async (req, res) => {
     try {
         const property = await Property.findById(req.params.id).populate('currentOwner', '-password')
         if (!property) {
-            throw new Error({ msg: 'Property not found' })
+            throw new Error('No such property with that id')
         } else {
             return res.status(200).json(property)
         }
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.status(500).json(error)
     }
 })
 
-// CREATE ESTATE
+// CREATE PROPERTY
 propertyController.post('/', verifyToken, async (req, res) => {
     try {
         const newProperty = await Property.create({ ...req.body, currentOwner: req.user.id })
         return res.status(201).json(newProperty)
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.status(500).json(error)
     }
 })
 
-// UPDATE ESTATE
+// UPDATE PROPERTY
 propertyController.put('/:id', verifyToken, async (req, res) => {
     try {
         const property = await Property.findById(req.params.id)
         if (property.currentOwner.toString() !== req.user.id) {
-            throw new Error({ msg: 'You are not authorized to update this property' })
+            throw new Error("You are not allowed to update other people's properties")
         }
         const updatedProperty = await Property.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
         return res.status(200).json(updatedProperty)
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.status(500).json(error)
     }
 })
 
-// BOOKMARK/UNBOOKMARK ESTATE
+// BOOKMARK/UNBOOKMARK PROPERTY
 propertyController.put('/bookmark/:id', verifyToken, async (req, res) => {
     try {
         let property = await Property.findById(req.params.id)
         if (property.currentOwner.toString() === req.user.id) {
-            throw new Error({ msg: 'You cannot bookmark your own property' })
+            throw new Error("You are not allowed to bookmark your project")
         }
         if (property.bookmarkedUsers.includes(req.user.id)) {
             property.bookmarkedUsers = property.bookmarkedUsers.filter(id => id !== req.user.id)
@@ -113,9 +113,9 @@ propertyController.put('/bookmark/:id', verifyToken, async (req, res) => {
             property.bookmarkedUsers.push(req.user.id)
             await property.save()
         }
-        return res.status(200).json({ msg: 'Property bookmarked' })
+        return res.status(200).json(property)
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.status(500).json(error)
     }
 })
 
@@ -124,12 +124,12 @@ propertyController.delete('/:id', verifyToken, async (req, res) => {
     try {
         const property = await Property.findById(req.params.id)
         if (property.currentOwner.toString() !== req.user.id) {
-            throw new Error({ msg: 'You are not authorized to delete this property' })
+            throw new Error("You are not allowed to delete other people properties")
         }
         await property.delete()
-        return res.status(200).json({ msg: 'Property successfully deleted' })
+        return res.status(200).json({ msg: "Successfully deleted property" })
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.status(500).json(error)
     }
 })
 

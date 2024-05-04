@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose")
 
 const CommentSchema = new mongoose.Schema({
     listing: {
         type: String,
-        required: true
+        required: true,
     },
     author: {
         type: mongoose.Types.ObjectId,
@@ -16,4 +16,4 @@ const CommentSchema = new mongoose.Schema({
     }
 }, { timestamps: true })
 
-module.exports = mongoose.model('Comment', CommentSchema)
+module.exports = mongoose.model("Comment", CommentSchema)

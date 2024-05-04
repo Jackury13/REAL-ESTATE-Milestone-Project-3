@@ -1,20 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose")
 
 const YachtSchema = new mongoose.Schema({
     currentOwner: {
         type: mongoose.Types.ObjectId,
-        ref: 'User',
+        ref: "User",
         required: true
     },
     title: {
         type: String,
         required: true,
-        min: 6
+        min: 6,
     },
     desc: {
         type: String,
         required: true,
-        min: 12
+        min: 12,
     },
     img: {
         type: String,
@@ -32,7 +32,7 @@ const YachtSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    mastersLong: {
+    feetLong: {
         type: String,
         required: true
     },
@@ -42,4 +42,4 @@ const YachtSchema = new mongoose.Schema({
     }
 }, { timestamps: true })
 
-module.exports = mongoose.model('Yacht', YachtSchema)
+module.exports = mongoose.model("Yacht", YachtSchema)

@@ -1,6 +1,6 @@
+
 const yachtController = require('express').Router()
 const Yacht = require('../models/Yacht')
-const User = require('../models/User')
 const verifyToken = require('../middlewares/verifyToken')
 
 // GET ALL
@@ -9,7 +9,7 @@ yachtController.get('/getAll', async (req, res) => {
         const yachts = await Yacht.find({})
         return res.status(200).json(yachts)
     } catch (error) {
-        console.error(error)        
+        console.error(error)
     }
 })
 
@@ -19,17 +19,17 @@ yachtController.get('/find/my-yachts', verifyToken, async (req, res) => {
         const yachts = await Yacht.find({ currentOwner: req.user.id })
         return res.status(200).json(yachts)
     } catch (error) {
-        console.error(error)        
+        console.error(error)
     }
 })
 
 // FETCH BOOKMARKED YACHTS
 yachtController.get('/find/bookmarked-yachts', verifyToken, async (req, res) => {
     try {
-        const yachts = await Yacht.find({ bookmarkedUsers: { $in: req.user.id } })
+        const yachts = await Yacht.find({ bookmarkedUsers: { $in: [req.user.id] } })
         return res.status(200).json(yachts)
     } catch (error) {
-        console.error(error)        
+        console.error(error)
     }
 })
 
@@ -38,12 +38,12 @@ yachtController.get('/find/:id', async (req, res) => {
     try {
         const yacht = await Yacht.findById(req.params.id).populate('currentOwner', '-password')
         if (!yacht) {
-            throw new Error({ msg: 'Yacht not found' })
+            throw new Error('No such yacht with that id')
         } else {
             return res.status(200).json(yacht)
         }
     } catch (error) {
-        return res.status(500).json(error)        
+        return res.status(500).json(error)
     }
 })
 
@@ -53,7 +53,7 @@ yachtController.post('/', verifyToken, async (req, res) => {
         const newYacht = await Yacht.create({ ...req.body, currentOwner: req.user.id })
         return res.status(201).json(newYacht)
     } catch (error) {
-        return res.status(500).json(error)        
+        return res.status(500).json(error)
     }
 })
 
@@ -62,12 +62,12 @@ yachtController.put('/:id', verifyToken, async (req, res) => {
     try {
         const yacht = await Yacht.findById(req.params.id)
         if (yacht.currentOwner.toString() !== req.user.id) {
-            throw new Error({ msg: 'You are not authorized to update this yacht' })
+            throw new Error("You are not allowed to update other people's yachts")
         }
         const updatedYacht = await Yacht.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
         return res.status(200).json(updatedYacht)
     } catch (error) {
-        return res.status(500).json(error)       
+        return res.status(500).json(error)
     }
 })
 
@@ -76,7 +76,7 @@ yachtController.put('/bookmark/:id', verifyToken, async (req, res) => {
     try {
         let yacht = await Yacht.findById(req.params.id)
         if (yacht.currentOwner.toString() === req.user.id) {
-            throw new Error({ msg: 'You cannot bookmark your own yacht' })
+            throw new Error("You are not allowed to bookmark your project")
         }
         if (yacht.bookmarkedUsers.includes(req.user.id)) {
             yacht.bookmarkedUsers = yacht.bookmarkedUsers.filter(id => id !== req.user.id)
@@ -85,23 +85,23 @@ yachtController.put('/bookmark/:id', verifyToken, async (req, res) => {
             yacht.bookmarkedUsers.push(req.user.id)
             await yacht.save()
         }
-        return res.status(200).json({ msg: 'Yacht bookmarked' })
+        return res.status(200).json(yacht)
     } catch (error) {
-        return res.status(500).json(error)      
+        return res.status(500).json(error)
     }
 })
 
 // DELETE YACHT
 yachtController.delete('/:id', verifyToken, async (req, res) => {
     try {
-      const yacht = await Yacht.findById(req.params.id)
-      if (yacht.currentOwner.toString() !== req.user.id) {
-          throw new Error({ msg: 'You are not authorized to delete this yacht' })
-      }
-      await yacht.delete()
-      return res.status(200).json({ msg: 'Yacht successfully deleted' })  
+        const yacht = await Yacht.findById(req.params.id)
+        if (yacht.currentOwner.toString() !== req.user.id) {
+            throw new Error("You are not allowed to delete other people properties")
+        }
+        await yacht.delete()
+        return res.status(200).json({ msg: "Successfully deleted yacht" })
     } catch (error) {
-        return res.status(500).json(error)       
+        return res.status(500).json(error)
     }
 })
 
